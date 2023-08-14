@@ -84,8 +84,8 @@ data:extend({
     recipe("advanced-crafting", "sb-general", 1, "sb-honey-cube", items("sb-honey-comb", 5), items("sb-honey-cube", 1, "sb-wax", 5)),
     recipe("crafting", "sb-general", 1, "sb-wooden-frame", items("wood", 1, "copper-wire", 5), items("sb-wooden-frame", 10)),
 
-    recipe("sb-incubator", "sb-bees", 90, "sb-bee-queen-1", items("sb-larva", 1), items("sb-bee-queen", 1)),
-    recipe("sb-incubator", "sb-bees", 10, "sb-bee-queen-2", items("sb-larva", 1, "sb-honey-cube", 1), items("sb-bee-queen", 1)),
+    recipeWithIcon("sb-incubator", "sb-bees", 90, "larva-grow-long", items("sb-larva", 1), items("sb-bee-queen", 1)),
+    recipeWithIcon("sb-incubator", "sb-bees", 30, "larva-grow", items("sb-larva", 1, "sb-honey-cube", 5), items("sb-bee-queen", 1)),
 
     {
         type = "recipe",
