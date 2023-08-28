@@ -1,0 +1,8 @@
+Version 0.0.1 / 28-08-2023
+Initial state. Features:
+- Bee House for combs production
+- Incubator for bees breeding
+- Simple breeding chain including a Larva, a Bee Queen and a Worker Bees
+- Honey combs production
+- Honey heals as fish does
+- Vanilla resources combs production
