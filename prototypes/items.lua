@@ -52,7 +52,46 @@ data:extend({
     item("sb-uranium-wax", 100, "sb-combs"),
 
     item("sb-honey-comb", 500, "sb-general"),
-    item("sb-honey-cube", 100, "sb-general"),
+
+    {
+        type = "capsule",
+        name = "sb-honey-cube",
+        icon = GRAPHICS_PATH .. "icons/sb-honey-cube.png",
+        icon_size = 64,
+        subgroup = "sb-general",
+        stack_size = 100,
+        capsule_action = {
+            type = "use-on-self",
+            attack_parameters = {
+                type = "projectile",
+                activation_type = "consume",
+                ammo_category = "capsule",
+                cooldown = 30,
+                range = 0,
+                ammo_type = {
+                    category = "capsule",
+                    target_type = "position",
+                    action = {
+                        type = "direct",
+                        action_delivery = {
+                            type = "instant",
+                            target_effects = {
+                                {type = "damage", damage = {type = "physical", amount = -80}},
+                                {type = "play-sound", sound = {
+                                    {filename = "__base__/sound/eat.ogg", volume = 0.6},
+                                    {filename = "__base__/sound/eat-1.ogg", volume = 0.6},
+                                    {filename = "__base__/sound/eat-2.ogg", volume = 0.6},
+                                    {filename = "__base__/sound/eat-3.ogg", volume = 0.6},
+                                    {filename = "__base__/sound/eat-4.ogg", volume = 0.6}
+                                }}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+
     fuel("sb-wax", 1000, "sb-general", "1MJ"),
     item("sb-wooden-frame", 100, "sb-general")
 })
