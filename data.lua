@@ -27,21 +27,27 @@ data:extend({
     },
     {
         type = "item-subgroup",
-        name = "sb-combs",
+        name = "sb-resource-bees",
         group = "simply-bees",
         order = "c-a"
     },
     {
         type = "item-subgroup",
-        name = "sb-general",
+        name = "sb-combs",
         group = "simply-bees",
         order = "d-a"
     },
     {
         type = "item-subgroup",
-        name = "sb-ores",
+        name = "sb-general",
         group = "simply-bees",
         order = "e-a"
+    },
+    {
+        type = "item-subgroup",
+        name = "sb-ores",
+        group = "simply-bees",
+        order = "f-a"
     },
     {
         type = "recipe-category",

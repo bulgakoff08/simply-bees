@@ -33,6 +33,12 @@ data:extend({
     item("sb-larva", 50, "sb-bees"),
     item("sb-worker-bee", 500, "sb-bees"),
 
+    item("sb-coal-worker-bee", 500, "sb-resource-bees"),
+    item("sb-copper-worker-bee", 500, "sb-resource-bees"),
+    item("sb-iron-worker-bee", 500, "sb-resource-bees"),
+    item("sb-stone-worker-bee", 500, "sb-resource-bees"),
+    item("sb-uranium-worker-bee", 500, "sb-resource-bees"),
+
     item("sb-coal-honey-comb", 100, "sb-combs"),
     item("sb-copper-honey-comb", 100, "sb-combs"),
     item("sb-iron-honey-comb", 100, "sb-combs"),

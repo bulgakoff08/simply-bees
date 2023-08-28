@@ -1,9 +1,10 @@
-script.on_event(defines.events.on_player_used_capsule, function(event)
+script.on_event(defines.events.on_player_mined_entity, function(event)
     local player = game.players[event.player_index]
-    local item_stack = player.cursor_stack
-    if item_stack.valid_for_read and item_stack.name == "sb-honey-cube" then
-        local healing_amount = 20
-        player.character.health = player.character.health + healing_amount
-        item_stack.clear()
+    if event.entity then
+        if string.find(event.entity.name, "tree-") then
+            if math.random(1, 100) > 90 then
+                player.get_main_inventory().insert({name = "sb-larva", amount = 1})
+            end
+        end
     end
 end)
