@@ -62,19 +62,9 @@ data:extend({
         name = "sb-basic-beekeeping",
         icon = GRAPHICS_PATH .. "simply-bees.png",
         icon_size = 128,
-        effects = {{type = "give-item", item = "sb-bee-queen", count = 5}},
+        effects = {{type = "give-item", item = "sb-bee-queen", count = 10}},
         prerequisites = {"optics"},
         order = "f-b-b",
         unit = {count = 100, ingredients = {{"automation-science-pack", 1}}, time = 10}
-    },
-    {
-        type = "technology",
-        name = "sb-emergency-beekeeping",
-        icon = GRAPHICS_PATH .. "emergency-bees.png",
-        icon_size = 128,
-        effects = {{type = "give-item", item = "sb-bee-queen", count = 5}},
-        prerequisites = {"sb-basic-beekeeping"},
-        order = "f-b-b",
-        unit = {count = 100, ingredients = {{"space-science-pack", 1}}, time = 10}
     }
 })

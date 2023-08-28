@@ -71,6 +71,8 @@ data:extend({
     recipe("sb-bee-house", "sb-combs", 5, "sb-uranium-honey-comb", items("sb-wooden-frame", 1, "sb-uranium-worker-bee", 1), items("sb-uranium-honey-comb", 5)),
     recipe("sb-bee-house", "sb-general", 5, "sb-honey-comb", items("sb-wooden-frame", 1, "sb-worker-bee", 1), items("sb-honey-comb", 5)),
 
+    recipe("advanced-crafting", "sb-general", 5, "sb-solid-fuel", items("sb-wax", 10), items("solid-fuel", 1)),
+
     recipe("advanced-crafting", "sb-combs", 0.5, "sb-coal-wax", items("sb-coal-honey-comb", 1), items("sb-coal-wax", 1)),
     recipe("advanced-crafting", "sb-combs", 0.5, "sb-copper-wax", items("sb-copper-honey-comb", 1), items("sb-copper-wax", 1)),
     recipe("advanced-crafting", "sb-combs", 0.5, "sb-iron-wax", items("sb-iron-honey-comb", 1), items("sb-iron-wax", 1)),
@@ -88,6 +90,19 @@ data:extend({
 
     recipeWithIcon("sb-incubator", "sb-bees", 30, "larva-grow-long", items("sb-larva", 1), items("sb-bee-queen", 1)),
     recipeWithIcon("sb-incubator", "sb-bees", 5, "larva-grow", items("sb-larva", 1, "sb-honey-cube", 5), items("sb-bee-queen", 1)),
+
+    {
+        type = "recipe",
+        name = "sb-honey-cube-destroy",
+        icon = GRAPHICS_PATH .. "icons/recipes/honey-cube-destroy.png",
+        icon_size = 64,
+        category = "advanced-crafting",
+        subgroup = "sb-general",
+        energy_required = 0.25,
+        ingredients = items("sb-honey-cube", 1),
+        results = {},
+        allow_as_intermediate = false
+    },
 
     recipe("sb-incubator", "sb-bees", 2, "sb-worker-bee", items("sb-bee-queen", 1), items("sb-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)),
 
