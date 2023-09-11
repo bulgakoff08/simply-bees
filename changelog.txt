@@ -1,3 +1,13 @@
+Version 0.0.2 / 11-09-2023
+- Changed ores production cycle
+- Added resource pieces and nuggets
+- Added broken frame
+- Added recipe to destroy wax
+- Changed icon for worker bee
+- Changed some recipe icons
+- Removed resource wax
+- Improved descriptions
+
 Version 0.0.1 / 28-08-2023
 Initial state. Features:
 - Bee House for combs production

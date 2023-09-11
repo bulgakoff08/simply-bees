@@ -58,6 +58,10 @@ data:extend({
         name = "sb-incubator"
     },
     {
+        type = "recipe-category",
+        name = "sb-centrifuge"
+    },
+    {
         type = "technology",
         name = "sb-basic-beekeeping",
         icon = GRAPHICS_PATH .. "simply-bees.png",

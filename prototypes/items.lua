@@ -28,6 +28,7 @@ end
 data:extend({
     machine("sb-bee-house", 10, "sb-machines"),
     machine("sb-incubator", 10, "sb-machines"),
+    machine("sb-thermal-centrifuge", 10, "sb-machines"),
 
     item("sb-bee-queen", 50, "sb-bees"),
     item("sb-larva", 50, "sb-bees"),
@@ -45,14 +46,20 @@ data:extend({
     item("sb-stone-honey-comb", 100, "sb-combs"),
     item("sb-uranium-honey-comb", 100, "sb-combs"),
 
+    item("sb-coal-piece", 150, "sb-ores"),
+    item("sb-copper-nugget", 150, "sb-ores"),
+    item("sb-iron-nugget", 150, "sb-ores"),
+    item("sb-stone-piece", 150, "sb-ores"),
+    item("sb-uranium-nugget", 150, "sb-ores"),
+
     item("sb-coal-wax", 100, "sb-combs"),
     item("sb-copper-wax", 100, "sb-combs"),
     item("sb-iron-wax", 100, "sb-combs"),
     item("sb-stone-wax", 100, "sb-combs"),
     item("sb-uranium-wax", 100, "sb-combs"),
 
+    item("sb-broken-frame", 300, "sb-general"),
     item("sb-honey-comb", 500, "sb-general"),
-
     {
         type = "capsule",
         name = "sb-honey-cube",
@@ -91,7 +98,6 @@ data:extend({
             }
         }
     },
-
     fuel("sb-wax", 1000, "sb-general", "1MJ"),
     item("sb-wooden-frame", 100, "sb-general")
 })
