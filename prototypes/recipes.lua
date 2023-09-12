@@ -73,11 +73,11 @@ data:extend({
 
     recipe("advanced-crafting", "sb-general", 5, "sb-solid-fuel", items("sb-wax", 10), items("solid-fuel", 1)),
 
-    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-coal-piece", items("sb-coal-honey-comb", 1), items("sb-coal-piece", 4, "sb-coal-piece", 0.75, "sb-wax", 0.25)),
-    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-copper-nugget", items("sb-copper-honey-comb", 1), items("sb-copper-nugget", 4, "sb-copper-nugget", 0.75, "sb-wax", 0.25)),
-    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-iron-nugget", items("sb-iron-honey-comb", 1), items("sb-iron-nugget", 4, "sb-iron-nugget", 0.75, "sb-wax", 0.25)),
-    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-stone-piece", items("sb-stone-honey-comb", 1), items("sb-stone-piece", 4, "sb-stone-piece", 0.75, "sb-wax", 0.25)),
-    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-uranium-nugget", items("sb-uranium-honey-comb", 1), items("sb-uranium-nugget", 1, "sb-uranium-nugget", 0.75, "sb-wax", 0.25)),
+    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-coal-piece", items("sb-coal-honey-comb", 1), items("sb-coal-piece", 4, "sb-coal-piece", 0.75)),
+    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-copper-nugget", items("sb-copper-honey-comb", 1), items("sb-copper-nugget", 4, "sb-copper-nugget", 0.75)),
+    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-iron-nugget", items("sb-iron-honey-comb", 1), items("sb-iron-nugget", 4, "sb-iron-nugget", 0.75)),
+    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-stone-piece", items("sb-stone-honey-comb", 1), items("sb-stone-piece", 4, "sb-stone-piece", 0.75)),
+    recipe("sb-centrifuge", "sb-combs", 0.5, "sb-uranium-nugget", items("sb-uranium-honey-comb", 1), items("sb-uranium-nugget", 1, "sb-uranium-nugget", 0.75)),
 
     recipe("crafting", "sb-ores", 0.25, "sb-coal", items("sb-coal-piece", 4), items("coal", 1)),
     recipe("crafting", "sb-ores", 0.25, "sb-copper-ore", items("sb-copper-nugget", 4), items("copper-ore", 1)),
