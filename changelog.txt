@@ -1,3 +1,7 @@
+Version 0.0.3 / 17-09-2023
+- Added Void Honey Combs and Void Worker Bees
+- Optional dependency to mod "Void Snatch"
+
 Version 0.0.2 / 11-09-2023
 - Changed ores production cycle
 - Added resource pieces and nuggets

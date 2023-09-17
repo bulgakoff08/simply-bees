@@ -101,3 +101,10 @@ data:extend({
     fuel("sb-wax", 1000, "sb-general", "1MJ"),
     item("sb-wooden-frame", 100, "sb-general")
 })
+
+if mods["void-snatch"] then
+    data:extend({
+        item("sb-void-honey-comb", 100, "sb-combs"),
+        item("sb-void-worker-bee", 100, "sb-bees")
+    })
+end
