@@ -1,3 +1,6 @@
+Version 0.0.4 / 20-09-2023
+- Tweaked Void Honey Combs recipes
+
 Version 0.0.3 / 18-09-2023
 - Added Void Honey Combs and Void Worker Bees
 - Optional dependency to mod "Void Snatch"
