@@ -101,8 +101,7 @@ data:extend({
         subgroup = "sb-general",
         energy_required = 0.25,
         ingredients = items("sb-honey-cube", 1),
-        results = {},
-        allow_as_intermediate = false
+        results = {}
     },
     {
         type = "recipe",
@@ -113,8 +112,7 @@ data:extend({
         subgroup = "sb-general",
         energy_required = 0.25,
         ingredients = items("sb-wax", 1),
-        results = {},
-        allow_as_intermediate = false
+        results = {}
     },
 
     recipe("sb-incubator", "sb-bees", 2, "sb-worker-bee", items("sb-bee-queen", 1), items("sb-worker-bee", 32, "sb-larva", 1, "sb-larva", 0.02)),
@@ -128,12 +126,13 @@ data:extend({
 
 if mods["void-snatch"] then
     data:extend({
-        recipe("sb-incubator", "sb-resource-bees", 2, "sb-void-worker-bee", items("sb-bee-queen", 1, "vs-void-catalyst", 50), items("sb-void-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)),
+        recipe("sb-incubator", "sb-resource-bees", 2, "sb-void-worker-bee", items("sb-bee-queen", 1, "vs-void-catalyst", 25), items("sb-void-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)),
         recipe("sb-bee-house", "sb-combs", 5, "sb-void-honey-comb", items("sb-wooden-frame", 1, "sb-void-worker-bee", 1), items("sb-void-honey-comb", 5, "sb-broken-frame", 0.25)),
-        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-coal-piece", items("sb-void-honey-comb", 1), items("sb-coal-piece", 4, "sb-coal-piece", 0.75, "vs-void-catalyst", 0.75)),
-        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-copper-nugget", items("sb-void-honey-comb", 1), items("sb-copper-nugget", 4, "sb-copper-nugget", 0.75, "vs-void-catalyst", 0.75)),
-        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-iron-nugget", items("sb-void-honey-comb", 1), items("sb-iron-nugget", 4, "sb-iron-nugget", 0.75, "vs-void-catalyst", 0.75)),
-        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-stone-piece", items("sb-void-honey-comb", 1), items("sb-stone-piece", 4, "sb-stone-piece", 0.75, "vs-void-catalyst", 0.75)),
-        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-uranium-nugget", items("sb-void-honey-comb", 1), items("sb-uranium-nugget", 1, "sb-uranium-nugget", 0.75, "vs-void-catalyst", 0.75)),
+
+        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-coal-piece", items("sb-void-honey-comb", 1), items("sb-coal-piece", 4, "sb-coal-piece", 0.75, "vs-void-catalyst", 0.25)),
+        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-copper-nugget", items("sb-void-honey-comb", 1), items("sb-copper-nugget", 4, "sb-copper-nugget", 0.75, "vs-void-catalyst", 0.25)),
+        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-iron-nugget", items("sb-void-honey-comb", 1), items("sb-iron-nugget", 4, "sb-iron-nugget", 0.75, "vs-void-catalyst", 0.25)),
+        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-stone-piece", items("sb-void-honey-comb", 1), items("sb-stone-piece", 4, "sb-stone-piece", 0.75, "vs-void-catalyst", 0.25)),
+        recipeWithIcon("sb-centrifuge", "sb-pieces", 0.5, "void-uranium-nugget", items("sb-void-honey-comb", 1), items("sb-uranium-nugget", 1, "sb-uranium-nugget", 0.75, "vs-void-catalyst", 0.25)),
     })
 end
