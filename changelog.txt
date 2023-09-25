@@ -1,3 +1,7 @@
+Version 0.0.5 / 25-09-2023
+- Increased Void Catalyst yield in Void Combs processing recipe
+- Added Brazilian translation
+
 Version 0.0.4 / 20-09-2023
 - Tweaked Void Honey Combs recipes
 
