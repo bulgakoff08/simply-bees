@@ -24,8 +24,8 @@ data:extend({
         },
         energy_source = {
             type = "electric",
-            usage_priority = "secondary-input",
-            emissions_per_second = -10,
+            usage_priority = "primary-input",
+            emissions_per_minute = -8,
         },
         module_specification = {
             module_slots = 2
@@ -81,8 +81,8 @@ data:extend({
         },
         energy_source = {
             type = "electric",
-            usage_priority = "secondary-input",
-            emissions_per_second = 1,
+            usage_priority = "primary-input",
+            emissions_per_minute = 0,
         },
         module_specification = {
             module_slots = 2
@@ -138,8 +138,8 @@ data:extend({
         },
         energy_source = {
             type = "electric",
-            usage_priority = "secondary-input",
-            emissions_per_second = 1,
+            usage_priority = "primary-input",
+            emissions_per_minute = 0,
         },
         module_specification = {
             module_slots = 2

@@ -45,15 +45,21 @@ data:extend({
     },
     {
         type = "item-subgroup",
-        name = "sb-general",
+        name = "sb-void-pieces",
         group = "simply-bees",
         order = "f-a"
     },
     {
         type = "item-subgroup",
-        name = "sb-ores",
+        name = "sb-general",
         group = "simply-bees",
         order = "g-a"
+    },
+    {
+        type = "item-subgroup",
+        name = "sb-ores",
+        group = "simply-bees",
+        order = "h-a"
     },
     {
         type = "recipe-category",
