@@ -85,7 +85,7 @@ data:extend({
                             target_effects = {
                                 {type = "damage", damage = {type = "physical", amount = -80}},
                                 {type = "play-sound", sound = {
-                                    {filename = "__base__/sound/eat.ogg", volume = 0.6},
+                                    {filename = "__base__/sound/eat-5.ogg", volume = 0.6},
                                     {filename = "__base__/sound/eat-1.ogg", volume = 0.6},
                                     {filename = "__base__/sound/eat-2.ogg", volume = 0.6},
                                     {filename = "__base__/sound/eat-3.ogg", volume = 0.6},

@@ -25,7 +25,7 @@ data:extend({
         energy_source = {
             type = "electric",
             usage_priority = "primary-input",
-            emissions_per_minute = -8,
+            emissions_per_minute = {pollution = -16},
         },
         module_specification = {
             module_slots = 2
@@ -37,7 +37,7 @@ data:extend({
         },
         crafting_categories = {"sb-bee-house"},
         crafting_speed = 1,
-        energy_usage = "10KW",
+        energy_usage = "10kW",
         -- collision_box = {{rightPadding, bottomPadding}, {leftPadding, topPadding}}
         collision_box = {{-0.75, -0.75}, {0.75, 0.75}},
         selection_box = {{-1, -1}, {1, 1}},
@@ -45,14 +45,16 @@ data:extend({
             sound = {filename = SOUNDS_PATH .. "bee-machine.ogg"},
             audible_distance_modifier = 0.25
         },
-        animation= {
-            filename = GRAPHICS_PATH .. "entities/bee-house.png",
-            priority = "extra-high",
-            width = 192,
-            height = 192,
-            frame_count = 1,
-            scale = 0.5,
-            shift = {0.25, -0.34375}
+        graphics_set = {
+            animation= {
+                filename = GRAPHICS_PATH .. "entities/bee-house.png",
+                priority = "extra-high",
+                width = 192,
+                height = 192,
+                frame_count = 1,
+                scale = 0.5,
+                shift = {0.25, -0.34375}
+            }
         },
         min_perceived_performance = 0.25,
         performance_to_sound_speedup = 0.5,
@@ -82,7 +84,7 @@ data:extend({
         energy_source = {
             type = "electric",
             usage_priority = "primary-input",
-            emissions_per_minute = 0,
+            emissions_per_minute = {pollution = 0},
         },
         module_specification = {
             module_slots = 2
@@ -94,7 +96,7 @@ data:extend({
         },
         crafting_categories = {"sb-incubator"},
         crafting_speed = 1,
-        energy_usage = "25KW",
+        energy_usage = "25kW",
         -- collision_box = {{rightPadding, bottomPadding}, {leftPadding, topPadding}}
         collision_box = {{-0.75, -0.75}, {0.75, 0.75}},
         selection_box = {{-1, -1}, {1, 1}},
@@ -102,14 +104,16 @@ data:extend({
             sound = {filename = "__base__/sound/pipe.ogg"},
             audible_distance_modifier = 0.5
         },
-        animation= {
-            filename = GRAPHICS_PATH .. "entities/incubator.png",
-            priority = 'extra-high',
-            width = 192,
-            height = 192,
-            frame_count = 1,
-            scale = 0.5,
-            shift = {0.21875, -0.3125}
+        graphics_set = {
+            animation= {
+                filename = GRAPHICS_PATH .. "entities/incubator.png",
+                priority = 'extra-high',
+                width = 192,
+                height = 192,
+                frame_count = 1,
+                scale = 0.5,
+                shift = {0.21875, -0.3125}
+            }
         },
         min_perceived_performance = 0.25,
         performance_to_sound_speedup = 0.5,
@@ -139,7 +143,7 @@ data:extend({
         energy_source = {
             type = "electric",
             usage_priority = "primary-input",
-            emissions_per_minute = 0,
+            emissions_per_minute = {pollution = 0},
         },
         module_specification = {
             module_slots = 2
@@ -151,22 +155,24 @@ data:extend({
         },
         crafting_categories = {"sb-centrifuge"},
         crafting_speed = 1,
-        energy_usage = "200KW",
+        energy_usage = "200kW",
         -- collision_box = {{rightPadding, bottomPadding}, {leftPadding, topPadding}}
         collision_box = {{-0.75, -0.75}, {0.75, 0.75}},
         selection_box = {{-1, -1}, {1, 1}},
         working_sound = {
-            sound = {filename = "__base__/sound/centrifuge-6.ogg"},
+            sound = {filename = "__base__/sound/centrifuge-3.ogg"},
             audible_distance_modifier = 0.25
         },
-        animation= {
-            filename = GRAPHICS_PATH .. "entities/thermal-centrifuge.png",
-            priority = 'extra-high',
-            width = 192,
-            height = 192,
-            frame_count = 1,
-            scale = 0.5,
-            shift = {0.21875, -0.3125}
+        graphics_set = {
+            animation= {
+                filename = GRAPHICS_PATH .. "entities/thermal-centrifuge.png",
+                priority = 'extra-high',
+                width = 192,
+                height = 192,
+                frame_count = 1,
+                scale = 0.5,
+                shift = {0.21875, -0.3125}
+            }
         },
         min_perceived_performance = 0.25,
         performance_to_sound_speedup = 0.5,

@@ -79,7 +79,7 @@ data:extend({
         icon = GRAPHICS_PATH .. "simply-bees.png",
         icon_size = 128,
         effects = {{type = "give-item", item = "sb-bee-queen", count = 10}},
-        prerequisites = {"optics"},
+        prerequisites = {"lamp"},
         order = "f-b-b",
         unit = {count = 100, ingredients = {{"automation-science-pack", 1}}, time = 10}
     }

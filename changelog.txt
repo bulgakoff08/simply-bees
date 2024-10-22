@@ -1,3 +1,7 @@
+Version 0.0.7 / 22-10-2024
+- Updated Factorio Version
+- Added missing recipe names
+
 Version 0.0.6 / 15-01-2024
 - Fixed typos in descriptions
 - Adjusted recipes alignment in grid
