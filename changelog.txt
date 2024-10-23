@@ -1,3 +1,7 @@
+Version 0.0.8 / 23-10-2024
+- Added message when player finds larva in a tree
+- Updated item descriptions
+
 Version 0.0.7 / 22-10-2024
 - Updated Factorio Version
 - Added missing recipe names
