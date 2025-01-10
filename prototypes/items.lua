@@ -105,6 +105,6 @@ data:extend({
 if mods["void-snatch"] then
     data:extend({
         item("sb-void-honey-comb", 100, "sb-combs"),
-        item("sb-void-worker-bee", 100, "sb-bees")
+        item("sb-void-worker-bee", 500, "sb-bees")
     })
 end

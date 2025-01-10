@@ -27,13 +27,12 @@ data:extend({
             usage_priority = "primary-input",
             emissions_per_minute = {pollution = -16},
         },
-        module_specification = {
-            module_slots = 2
-        },
+        module_slots = 4,
         allowed_effects = {
             "consumption",
             "speed",
-            "pollution"
+            "pollution",
+            "quality"
         },
         crafting_categories = {"sb-bee-house"},
         crafting_speed = 1,
@@ -86,13 +85,12 @@ data:extend({
             usage_priority = "primary-input",
             emissions_per_minute = {pollution = 0},
         },
-        module_specification = {
-            module_slots = 2
-        },
+        module_slots = 4,
         allowed_effects = {
             "consumption",
             "speed",
-            "pollution"
+            "pollution",
+            "quality"
         },
         crafting_categories = {"sb-incubator"},
         crafting_speed = 1,
@@ -145,9 +143,7 @@ data:extend({
             usage_priority = "primary-input",
             emissions_per_minute = {pollution = 0},
         },
-        module_specification = {
-            module_slots = 2
-        },
+        module_slots = 4,
         allowed_effects = {
             "consumption",
             "speed",

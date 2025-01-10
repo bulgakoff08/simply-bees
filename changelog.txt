@@ -1,3 +1,6 @@
+Version 0.0.9 / 10-01-2025
+- Added quality support. Quality bees can make quality ores
+
 Version 0.0.8 / 23-10-2024
 - Added message when player finds larva in a tree
 - Updated item descriptions

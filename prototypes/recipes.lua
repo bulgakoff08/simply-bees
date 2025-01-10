@@ -46,6 +46,7 @@ local function recipe(category, subgroup, duration, recipeId, inputs, outputs)
         category = category,
         subgroup = subgroup,
         energy_required = duration,
+        allow_productivity = category == "sb-centrifuge" or category == "sb-bee-house",
         ingredients = inputs,
         results = outputs,
         main_product = outputs[1]["name"]
@@ -57,6 +58,11 @@ local function recipeWithIcon(category, subgroup, duration, icon, inputs, output
     result["icon"] = GRAPHICS_PATH .. "icons/recipes/" .. icon .. ".png"
     result["icon_size"] = 64
     return result
+end
+
+local function noRecycle (prototype)
+    prototype["auto_recycle"] = false
+    return prototype
 end
 
 data:extend({
@@ -79,18 +85,18 @@ data:extend({
     recipe("sb-centrifuge", "sb-pieces", 0.5, "sb-stone-piece", items("sb-stone-honey-comb", 1), items("sb-stone-piece", 4, "sb-stone-piece", 0.75)),
     recipe("sb-centrifuge", "sb-pieces", 0.5, "sb-uranium-nugget", items("sb-uranium-honey-comb", 1), items("sb-uranium-nugget", 1, "sb-uranium-nugget", 0.75)),
 
-    recipe("crafting", "sb-ores", 0.25, "sb-coal", items("sb-coal-piece", 4), items("coal", 1)),
-    recipe("crafting", "sb-ores", 0.25, "sb-copper-ore", items("sb-copper-nugget", 4), items("copper-ore", 1)),
-    recipe("crafting", "sb-ores", 0.25, "sb-iron-ore", items("sb-iron-nugget", 4), items("iron-ore", 1)),
-    recipe("crafting", "sb-ores", 0.25, "sb-stone", items("sb-stone-piece", 4), items("stone", 1)),
-    recipe("crafting-with-fluid", "sb-ores", 0.25, "sb-uranium-ore", items("sb-uranium-nugget", 4, "sulfuric-acid", 2), items("uranium-ore", 1)),
+    noRecycle(recipe("crafting", "sb-ores", 0.25, "sb-coal", items("sb-coal-piece", 4), items("coal", 1))),
+    noRecycle(recipe("crafting", "sb-ores", 0.25, "sb-copper-ore", items("sb-copper-nugget", 4), items("copper-ore", 1))),
+    noRecycle(recipe("crafting", "sb-ores", 0.25, "sb-iron-ore", items("sb-iron-nugget", 4), items("iron-ore", 1))),
+    noRecycle(recipe("crafting", "sb-ores", 0.25, "sb-stone", items("sb-stone-piece", 4), items("stone", 1))),
+    noRecycle(recipe("crafting", "sb-ores", 0.25, "sb-uranium-ore", items("sb-uranium-nugget", 4), items("uranium-ore", 1))),
 
-    recipe("advanced-crafting", "sb-general", 1, "sb-honey-cube", items("sb-honey-comb", 5), items("sb-honey-cube", 1, "sb-wax", 5)),
-    recipe("crafting", "sb-general", 1, "sb-wooden-frame", items("wood", 2), items("sb-wooden-frame", 10)),
+    noRecycle(recipe("advanced-crafting", "sb-general", 1, "sb-honey-cube", items("sb-honey-comb", 5), items("sb-honey-cube", 1, "sb-wax", 5))),
+    noRecycle(recipe("crafting", "sb-general", 1, "sb-wooden-frame", items("wood", 2), items("sb-wooden-frame", 10))),
     recipe("crafting", "sb-general", 1, "sb-wooden-repaired-frame", items("sb-broken-frame", 3), items("sb-wooden-frame", 1)),
 
-    recipeWithIcon("sb-incubator", "sb-bees", 30, "larva-grow-long", items("sb-larva", 1), items("sb-bee-queen", 1)),
-    recipeWithIcon("sb-incubator", "sb-bees", 5, "larva-grow", items("sb-larva", 1, "sb-honey-cube", 5), items("sb-bee-queen", 1)),
+    noRecycle(recipeWithIcon("sb-incubator", "sb-bees", 30, "larva-grow-long", items("sb-larva", 1), items("sb-bee-queen", 1))),
+    noRecycle(recipeWithIcon("sb-incubator", "sb-bees", 5, "larva-grow", items("sb-larva", 1, "sb-honey-cube", 5), items("sb-bee-queen", 1))),
 
     {
         type = "recipe",
