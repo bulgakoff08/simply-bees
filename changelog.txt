@@ -1,3 +1,10 @@
+Version 0.0.10 / 10-06-2026
+- Comb recipes now always return broken frame piece
+- Slightly increased wood consumption for frames
+- Added Vulcanic, Mineral, Organic and Scrappy bees by inner planets in Space Age DLC with surface conditions
+- Added weights for all items
+- Fixed typos in item descriptions
+
 Version 0.0.9 / 10-01-2025
 - Added quality support. Quality bees can make quality ores
 

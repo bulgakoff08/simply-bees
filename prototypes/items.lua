@@ -1,5 +1,14 @@
 local GRAPHICS_PATH = "__simply-bees__/graphics/"
 
+local WEIGHTS = {
+    ["sb-machines"] = 5000,
+    ["sb-bees"] = 1000,
+    ["sb-resource-bees"] = 1000,
+    ["sb-combs"] = 1000,
+    ["sb-ores"] = 500,
+    ["sb-general"] = 500
+}
+
 local function item (itemId, stackSize, subgroup)
     return {
         type = "item",
@@ -7,7 +16,8 @@ local function item (itemId, stackSize, subgroup)
         icon = GRAPHICS_PATH .. "icons/" .. itemId .. ".png",
         icon_size = 64,
         subgroup = subgroup,
-        stack_size = stackSize
+        stack_size = stackSize,
+        weight = WEIGHTS[subgroup]
     }
 end
 
@@ -23,6 +33,12 @@ local function machine (itemId, stackSize, subgroup)
     local result = item(itemId, stackSize, subgroup)
     result["place_result"] = itemId
     return result
+end
+
+local function spoilage (prototype, seconds)
+    prototype["spoil_result"] = "spoilage"
+    prototype["spoil_ticks"] = seconds * 60
+    return prototype
 end
 
 data:extend({
@@ -52,14 +68,9 @@ data:extend({
     item("sb-stone-piece", 150, "sb-ores"),
     item("sb-uranium-nugget", 150, "sb-ores"),
 
-    item("sb-coal-wax", 100, "sb-combs"),
-    item("sb-copper-wax", 100, "sb-combs"),
-    item("sb-iron-wax", 100, "sb-combs"),
-    item("sb-stone-wax", 100, "sb-combs"),
-    item("sb-uranium-wax", 100, "sb-combs"),
-
     item("sb-broken-frame", 300, "sb-general"),
     item("sb-honey-comb", 500, "sb-general"),
+
     {
         type = "capsule",
         name = "sb-honey-cube",
@@ -98,9 +109,26 @@ data:extend({
             }
         }
     },
+
     fuel("sb-wax", 1000, "sb-general", "1MJ"),
     item("sb-wooden-frame", 100, "sb-general")
 })
+
+if mods["space-age"] then
+    data:extend({
+        item("sb-organic-worker-bee", 500, "sb-resource-bees"),
+        item("sb-holmium-worker-bee", 500, "sb-resource-bees"),
+        item("sb-tungsten-worker-bee", 500, "sb-resource-bees"),
+        item("sb-calcite-worker-bee", 500, "sb-resource-bees"),
+        spoilage(item("sb-organic-comb", 100, "sb-combs"), 600),
+        item("sb-holmium-comb", 100, "sb-combs"),
+        item("sb-tungsten-comb", 100, "sb-combs"),
+        item("sb-calcite-comb", 100, "sb-combs"),
+        item("sb-holmium-nugget", 150, "sb-ores"),
+        item("sb-tungsten-nugget", 150, "sb-ores"),
+        item("sb-calcite-nugget", 150, "sb-ores"),
+    })
+end
 
 if mods["void-snatch"] then
     data:extend({

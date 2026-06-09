@@ -1,5 +1,9 @@
 local GRAPHICS_PATH = "__simply-bees__/graphics/"
 
+local IS_GLEBA = {{property = "pressure", min = 2000, max = 2000}}
+local IS_VULCAN = {{property = "pressure", min = 4000, max = 4000}}
+local IS_FULGORA = {{property = "magnetic-field", min = 99, max = 99}}
+
 local function type(itemId)
     if (itemId == "water") then
         return "fluid"
@@ -65,17 +69,22 @@ local function noRecycle (prototype)
     return prototype
 end
 
+local function addCondition (prototype, condition)
+    prototype["surface_conditions"] = condition
+    return prototype
+end
+
 data:extend({
     recipe("crafting", "sb-machines", 1, "sb-bee-house", items("wood", 10, "small-lamp", 2, "iron-plate", 10), items("sb-bee-house", 1)),
     recipe("crafting", "sb-machines", 1, "sb-incubator", items("wood", 10, "small-lamp", 5, "iron-plate", 10), items("sb-incubator", 1)),
     recipe("crafting", "sb-machines", 1, "sb-thermal-centrifuge", items("engine-unit", 1, "stone-furnace", 1, "iron-plate", 10), items("sb-thermal-centrifuge", 1)),
 
-    recipe("sb-bee-house", "sb-combs", 5, "sb-coal-honey-comb", items("sb-wooden-frame", 1, "sb-coal-worker-bee", 1), items("sb-coal-honey-comb", 5, "sb-broken-frame", 0.3)),
-    recipe("sb-bee-house", "sb-combs", 5, "sb-copper-honey-comb", items("sb-wooden-frame", 1, "sb-copper-worker-bee", 1), items("sb-copper-honey-comb", 5, "sb-broken-frame", 0.3)),
-    recipe("sb-bee-house", "sb-combs", 5, "sb-iron-honey-comb", items("sb-wooden-frame", 1, "sb-iron-worker-bee", 1), items("sb-iron-honey-comb", 5, "sb-broken-frame", 0.3)),
-    recipe("sb-bee-house", "sb-combs", 5, "sb-stone-honey-comb", items("sb-wooden-frame", 1, "sb-stone-worker-bee", 1), items("sb-stone-honey-comb", 5, "sb-broken-frame", 0.3)),
-    recipe("sb-bee-house", "sb-combs", 5, "sb-uranium-honey-comb", items("sb-wooden-frame", 1, "sb-uranium-worker-bee", 1), items("sb-uranium-honey-comb", 5, "sb-broken-frame", 0.3)),
-    recipe("sb-bee-house", "sb-general", 5, "sb-honey-comb", items("sb-wooden-frame", 1, "sb-worker-bee", 1), items("sb-honey-comb", 5, "sb-broken-frame", 0.3)),
+    recipe("sb-bee-house", "sb-combs", 5, "sb-coal-honey-comb", items("sb-wooden-frame", 1, "sb-coal-worker-bee", 1), items("sb-coal-honey-comb", 5, "sb-broken-frame", 1)),
+    recipe("sb-bee-house", "sb-combs", 5, "sb-copper-honey-comb", items("sb-wooden-frame", 1, "sb-copper-worker-bee", 1), items("sb-copper-honey-comb", 5, "sb-broken-frame", 1)),
+    recipe("sb-bee-house", "sb-combs", 5, "sb-iron-honey-comb", items("sb-wooden-frame", 1, "sb-iron-worker-bee", 1), items("sb-iron-honey-comb", 5, "sb-broken-frame", 1)),
+    recipe("sb-bee-house", "sb-combs", 5, "sb-stone-honey-comb", items("sb-wooden-frame", 1, "sb-stone-worker-bee", 1), items("sb-stone-honey-comb", 5, "sb-broken-frame", 1)),
+    recipe("sb-bee-house", "sb-combs", 5, "sb-uranium-honey-comb", items("sb-wooden-frame", 1, "sb-uranium-worker-bee", 1), items("sb-uranium-honey-comb", 5, "sb-broken-frame", 1)),
+    recipe("sb-bee-house", "sb-general", 5, "sb-honey-comb", items("sb-wooden-frame", 1, "sb-worker-bee", 1), items("sb-honey-comb", 5, "sb-broken-frame", 1)),
 
     recipe("advanced-crafting", "sb-general", 5, "sb-solid-fuel", items("sb-wax", 10), items("solid-fuel", 1)),
 
@@ -92,7 +101,7 @@ data:extend({
     noRecycle(recipe("crafting", "sb-ores", 0.25, "sb-uranium-ore", items("sb-uranium-nugget", 4), items("uranium-ore", 1))),
 
     noRecycle(recipe("advanced-crafting", "sb-general", 1, "sb-honey-cube", items("sb-honey-comb", 5), items("sb-honey-cube", 1, "sb-wax", 5))),
-    noRecycle(recipe("crafting", "sb-general", 1, "sb-wooden-frame", items("wood", 2), items("sb-wooden-frame", 10))),
+    noRecycle(recipe("crafting", "sb-general", 1, "sb-wooden-frame", items("wood", 3), items("sb-wooden-frame", 10))),
     recipe("crafting", "sb-general", 1, "sb-wooden-repaired-frame", items("sb-broken-frame", 3), items("sb-wooden-frame", 1)),
 
     noRecycle(recipeWithIcon("sb-incubator", "sb-bees", 30, "larva-grow-long", items("sb-larva", 1), items("sb-bee-queen", 1))),
@@ -130,10 +139,33 @@ data:extend({
     recipe("sb-incubator", "sb-resource-bees", 2, "sb-uranium-worker-bee", items("sb-bee-queen", 1, "uranium-ore", 10), items("sb-uranium-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)),
 })
 
+if mods["space-age"] then
+    data:extend({
+        addCondition(recipe("sb-bee-house", "sb-combs", 5, "sb-organic-comb", items("sb-wooden-frame", 1, "sb-organic-worker-bee", 1), items("sb-organic-comb", 5, "sb-broken-frame", 1)), IS_GLEBA),
+        addCondition(recipe("sb-bee-house", "sb-combs", 5, "sb-holmium-comb", items("sb-wooden-frame", 1, "sb-holmium-worker-bee", 1), items("sb-holmium-comb", 5, "sb-broken-frame", 1)), IS_FULGORA),
+        addCondition(recipe("sb-bee-house", "sb-combs", 5, "sb-tungsten-comb", items("sb-wooden-frame", 1, "sb-tungsten-worker-bee", 1), items("sb-tungsten-comb", 5, "sb-broken-frame", 1)), IS_VULCAN),
+        addCondition(recipe("sb-bee-house", "sb-combs", 5, "sb-calcite-comb", items("sb-wooden-frame", 1, "sb-calcite-worker-bee", 1), items("sb-calcite-comb", 5, "sb-broken-frame", 1)), IS_VULCAN),
+
+        recipe("sb-centrifuge", "sb-pieces", 0.5, "sb-holmium-nugget", items("sb-holmium-comb", 1), items("sb-holmium-nugget", 0.75, "scrap", 2)),
+        recipe("sb-centrifuge", "sb-pieces", 1, "sb-tungsten-nugget", items("sb-tungsten-comb", 1), items("sb-tungsten-nugget", 2, "sb-tungsten-nugget", 0.75)),
+        recipe("sb-centrifuge", "sb-pieces", 1, "sb-calcite-nugget", items("sb-calcite-comb", 1), items("sb-calcite-nugget", 2, "sb-calcite-nugget", 0.75)),
+
+        noRecycle(recipe("organic", "sb-ores", 1, "sb-bioflux", items("sb-organic-comb", 1), items("bioflux", 2, "bioflux", 0.75))),
+        noRecycle(recipe("crafting", "sb-ores", 0.25, "sb-holmium-ore", items("sb-holmium-nugget", 4), items("holmium-ore", 1))),
+        noRecycle(recipe("metallurgy", "sb-ores", 0.25, "sb-tungsten-ore", items("sb-tungsten-nugget", 4), items("tungsten-ore", 1))),
+        noRecycle(recipe("metallurgy", "sb-ores", 0.25, "sb-calcite", items("sb-calcite-nugget", 4), items("calcite", 1))),
+
+        addCondition(recipe("sb-incubator", "sb-resource-bees", 2, "sb-organic-worker-bee", items("sb-bee-queen", 1, "bioflux", 10), items("sb-organic-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)), IS_GLEBA),
+        addCondition(recipe("sb-incubator", "sb-resource-bees", 2, "sb-holmium-worker-bee", items("sb-bee-queen", 1, "holmium-ore", 10), items("sb-holmium-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)), IS_FULGORA),
+        addCondition(recipe("sb-incubator", "sb-resource-bees", 2, "sb-tungsten-worker-bee", items("sb-bee-queen", 1, "tungsten-ore", 10), items("sb-tungsten-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)), IS_VULCAN),
+        addCondition(recipe("sb-incubator", "sb-resource-bees", 2, "sb-calcite-worker-bee", items("sb-bee-queen", 1, "calcite", 10), items("sb-calcite-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)), IS_VULCAN),
+    })
+end
+
 if mods["void-snatch"] then
     data:extend({
         recipe("sb-incubator", "sb-resource-bees", 2, "sb-void-worker-bee", items("sb-bee-queen", 1, "vs-void-catalyst", 25), items("sb-void-worker-bee", 25, "sb-larva", 1, "sb-larva", 0.02)),
-        recipe("sb-bee-house", "sb-combs", 5, "sb-void-honey-comb", items("sb-wooden-frame", 1, "sb-void-worker-bee", 1), items("sb-void-honey-comb", 5, "sb-broken-frame", 0.25)),
+        recipe("sb-bee-house", "sb-combs", 5, "sb-void-honey-comb", items("sb-wooden-frame", 1, "sb-void-worker-bee", 1), items("sb-void-honey-comb", 5, "sb-broken-frame", 1)),
 
         recipeWithIcon("sb-centrifuge", "sb-void-pieces", 0.5, "void-coal-piece", items("sb-void-honey-comb", 1), items("sb-coal-piece", 4, "sb-coal-piece", 0.75, "vs-void-catalyst", 0.3)),
         recipeWithIcon("sb-centrifuge", "sb-void-pieces", 0.5, "void-copper-nugget", items("sb-void-honey-comb", 1), items("sb-copper-nugget", 4, "sb-copper-nugget", 0.75, "vs-void-catalyst", 0.3)),
