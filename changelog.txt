@@ -1,4 +1,7 @@
-Version 0.0.10 / 10-06-2026
+Version 0.0.11 / 10-06-2026
+- Made combs and bees icons consistent with their production
+
+Version 0.0.10 / 09-06-2026
 - Comb recipes now always return broken frame piece
 - Slightly increased wood consumption for frames
 - Added Vulcanic, Mineral, Organic and Scrappy bees by inner planets in Space Age DLC with surface conditions
