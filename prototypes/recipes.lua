@@ -23,7 +23,7 @@ local function ingredient(itemId, count)
             name = itemId,
             amount_min = 1,
             amount_max = 1,
-            probability = count
+            independent_probability = count
         }
     else
         return {
@@ -47,7 +47,7 @@ local function recipe(category, subgroup, duration, recipeId, inputs, outputs)
     return {
         type = "recipe",
         name = recipeId,
-        category = category,
+        categories = {category},
         subgroup = subgroup,
         energy_required = duration,
         allow_productivity = category == "sb-centrifuge" or category == "sb-bee-house",
@@ -112,7 +112,7 @@ data:extend({
         name = "sb-honey-cube-destroy",
         icon = GRAPHICS_PATH .. "icons/recipes/honey-cube-destroy.png",
         icon_size = 64,
-        category = "advanced-crafting",
+        categories = {"advanced-crafting"},
         subgroup = "sb-general",
         energy_required = 0.25,
         ingredients = items("sb-honey-cube", 1),
@@ -123,7 +123,7 @@ data:extend({
         name = "sb-wax-destroy",
         icon = GRAPHICS_PATH .. "icons/recipes/wax-destroy.png",
         icon_size = 64,
-        category = "advanced-crafting",
+        categories = {"advanced-crafting"},
         subgroup = "sb-general",
         energy_required = 0.25,
         ingredients = items("sb-wax", 1),
