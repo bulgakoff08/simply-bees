@@ -1,3 +1,6 @@
+Version 0.0.13 / 22-09-2026
+- Updated code to match Factorio 1.2.20 API
+
 Version 0.0.12 / 23-06-2026
 - Updated code to match factorio 2.1 API
 
